@@ -2,6 +2,7 @@ import requests
 import os
 from dotenv import load_dotenv
 import json
+import time
 
 def get_location():
     file = open('location.txt', 'r')
@@ -12,10 +13,10 @@ def get_lat_lon(location):
     WEATHER_API_KEY=os.getenv('WEATHER_API_KEY')
     details = requests.get(f'http://api.openweathermap.org/geo/1.0/direct?q={location}&appid={WEATHER_API_KEY}')
     json_details = details.json()
-    print(json_details)
+    # print(json_details)
     latitude=json_details[0].get('lat')
     longitude=json_details[0].get('lon')
-    print(latitude, longitude)
+    # print(latitude, longitude)
     return latitude, longitude
 
 def kelvin_to_fahrenheit(temp_kelvin):
@@ -24,6 +25,7 @@ def kelvin_to_fahrenheit(temp_kelvin):
 def get_weather():
     weather_data = []
     location = get_location()
+    print(location)
     latitude, longitude = get_lat_lon(location)
     WEATHER_API_KEY=os.getenv('WEATHER_API_KEY')
     details = requests.get(f'https://api.openweathermap.org/data/3.0/onecall?lat={latitude}&lon={longitude}&appid={WEATHER_API_KEY}')
@@ -44,9 +46,11 @@ def get_weather():
     
     with open('data.json', 'w') as weather:
         json.dump(weather_data, weather)
+        
+    print(weather_data)
     
 while True:
+    time.sleep(2)
     get_weather()
-    
     break
     
