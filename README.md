@@ -16,3 +16,5 @@ To receive data, the user's program should read from the `data.json` file. At th
 - Weather Description
 - Icon (the icon can be rendered into the user's app by following the instructions outlined at: https://openweathermap.org/weather-conditions#Icon-list)
 
+## UML Sequence Diagram
+
