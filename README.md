@@ -6,6 +6,8 @@ The Weather Microservice is a python service that takes a requested location and
 
 ## How to Request Data
 
+_BEFORE USE: You must go to https://openweathermap.org/api/one-call-3 and sign up for an OpenWeather API Key before using this microservice. You can create a free account if less than 1000 API calls are made per day. The OpenWeather API Key should be added to a .env file as `WEATHER_API_KEY=<insert_api_key>` so it can be read from your environment variables during calls._
+
 To request data from the Weather Microservice, the user must provide a string in `City, State, Country` format, or in cases where state isn't valid (e.g. Paris, France), the user must utilize `City, Country` format. Currently, the provided string is written in the `location.txt` file and to update the call, the `location.txt` file must simply be updated (e.g. Seattle, WA, US).
 
 ## How to Receive Data
