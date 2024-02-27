@@ -5,9 +5,11 @@ import json
 import time
 
 def get_location():
-    file = open('location.txt', 'r')
-    location = file.read()
-    return location
+    while True:
+        file = open('location.txt', 'r')
+        location = file.read()
+        if location:
+            return location
     
 def get_lat_lon(location):
     WEATHER_API_KEY=os.getenv('WEATHER_API_KEY')
