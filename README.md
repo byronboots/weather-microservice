@@ -18,3 +18,4 @@ To receive data, the user's program should read from the `data.json` file. At th
 
 ## UML Sequence Diagram
 
+![image](https://github.com/byronboots/weather-microservice/assets/81896129/943c099d-6e2c-428b-8980-6e88aafd17bc)
